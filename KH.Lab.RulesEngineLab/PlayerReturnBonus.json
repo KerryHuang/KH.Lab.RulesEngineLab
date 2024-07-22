@@ -1,0 +1,65 @@
+{
+  "WorkflowName": "PlayerBonusWorkflow",
+  "Rules": [
+    {
+      "RuleName": "CalculateBaseBonus",
+      "SuccessEvent": "Base bonus calculated",
+      "ErrorMessage": "Error calculating base bonus",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "player.PlaceBet > 0", //符合C#
+      "Actions": {
+        "OnSuccess": {
+          "Name": "OutputExpression",
+          "Context": {
+            "Expression": "player.PlaceBet * 0.05m" //符合C#
+          }
+        }
+      }
+    },
+    {
+      "RuleName": "GameTypeSpecificBonus",
+      "SuccessEvent": "Additional bonus calculated for specific game types",
+      "ErrorMessage": "Error calculating additional bonus for specific game types",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "gameTypes.Contains(player.GameType) && player.PlaceBet > 200 && player.PlaceBet < 500",
+      "Actions": {
+        "OnSuccess": {
+          "Name": "OutputExpression",
+          "Context": {
+            "Expression": "player.PlaceBet * 0.01m"
+          }
+        }
+      }
+    },
+    {
+      "RuleName": "GameTypeSpecificBonusHigh",
+      "SuccessEvent": "Additional bonus calculated for high bets in specific game types",
+      "ErrorMessage": "Error calculating additional bonus for high bets in specific game types",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "gameTypes.Contains(player.GameType) && player.PlaceBet > 500 && player.PlaceBet < 1000",
+      "Actions": {
+        "OnSuccess": {
+          "Name": "OutputExpression",
+          "Context": {
+            "Expression": "player.PlaceBet  * 0.02m"
+          }
+        }
+      }
+    },
+    {
+      "RuleName": "GameTypeSpecificBonusVeryHigh",
+      "SuccessEvent": "Additional bonus calculated for very high bets in specific game types",
+      "ErrorMessage": "Error calculating additional bonus for very high bets in specific game types",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "gameTypes.Contains(player.GameType) && player.PlaceBet > 1000",
+      "Actions": {
+        "OnSuccess": {
+          "Name": "OutputExpression",
+          "Context": {
+            "Expression": "player.PlaceBet  * 0.03m"
+          }
+        }
+      }
+    }
+  ]
+}
