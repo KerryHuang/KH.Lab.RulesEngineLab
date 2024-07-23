@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KH.Lab.RulesEngineLab", "KH.Lab.RulesEngineLab\KH.Lab.RulesEngineLab.csproj", "{DB79D939-5EB3-4B05-9102-FFBFE093FD40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KH.Lab.RulesEngineLab", "KH.Lab.RulesEngineLab\KH.Lab.RulesEngineLab.csproj", "{DB79D939-5EB3-4B05-9102-FFBFE093FD40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KH.Lab.RulesEnglineService", "KH.Lab.RulesEnglineService\KH.Lab.RulesEnglineService.csproj", "{7992BEF4-0DA2-4A00-8CE3-BF7F08E204FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KH.Lab.RulesEnglineService", "KH.Lab.RulesEnglineService\KH.Lab.RulesEnglineService.csproj", "{7992BEF4-0DA2-4A00-8CE3-BF7F08E204FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "方案項目", "方案項目", "{7764B390-83E4-46C9-AB91-952F8601F6F8}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

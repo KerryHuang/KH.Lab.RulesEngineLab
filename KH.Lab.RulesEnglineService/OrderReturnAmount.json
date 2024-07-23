@@ -60,6 +60,21 @@
           }
         }
       }
+    },
+    {
+      "RuleName": "週年慶消費",
+      "SuccessEvent": "針對特定母代號且高消費給額外的折扣",
+      "ErrorMessage": "針對特定母代號且高消費給額外的折扣錯誤",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "order.Amount > 1000",
+      "Actions": {
+        "OnSuccess": {
+          "Name": "OutputExpression",
+          "Context": {
+            "Expression": "order.Amount  * 0.5m"
+          }
+        }
+      }
     }
   ]
 }
